@@ -2,7 +2,9 @@
 
 public static class Search
 {
-    //Returning NumberOfGuesses before returning the position and use Benchmark.
+    /* TODO Returning NumberOfGuesses before returning the position and use Benchmark.
+     * Generate target randomly.
+     * */
     public static int BinarySearch(int[] orderedArray, int target)
     {
         var low = 0;
@@ -30,22 +32,20 @@ public static class Search
         }
 
         return numberOfGuesses;
-        //return null;
     }
     
-    public static int SimpleSearch(int[] orderedArray, int target)
+    public static int SimpleSearch(IEnumerable<int> orderedArray, int target)
     {
         var numberOfGuesses = 0;
-        for (var i = 0; i < orderedArray.Length; i++)
+        foreach (var item in orderedArray)
         {
             numberOfGuesses++;
-            if (orderedArray[i] == target)
+            if (item == target)
             {
-                //return i;
+                break;
             }
         }
 
         return numberOfGuesses;
-        //return null;
     }
 }
